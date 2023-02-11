@@ -10,7 +10,13 @@ Un script hecho en Python para devolver valores aleatorios a formularios de pagi
 Se necesita instalar el modulo request para correr el script
 
 ```bash
-python -m pip install requests
+$ python -m pip install requests
+```
+
+Y para la pagina de pruebas se necesita el modulo Flask 
+    
+```bash
+$ pip install -U Flask
 ```
     
 ## Uso
