@@ -12,7 +12,11 @@ Se necesita instalar el modulo request para correr el script
 ```bash
 $ python -m pip install requests
 ```
+Para generar el fake user-agent se necesita
 
+```bash
+$ pip install fake-useragent
+```
 Y para la pagina de pruebas se necesita el modulo Flask 
     
 ```bash
