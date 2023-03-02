@@ -7,7 +7,7 @@ from fake_useragent import UserAgent
 
 ua = UserAgent()
 
-def cls():
+def cls(): #Funcion para limpiar la consola
     os.system('cls' if os.name == 'nt' else 'clear')
 
 #Inicio
@@ -46,7 +46,7 @@ cls()
 
 #Selecciona la cantidad de paquetes a enviar
 cantidad = input("Cuantos paquetes desearia enviar?: ")
-try: # Intenta transformrar la cantidad en un entero
+try: # Intenta transformar la cantidad en un entero
     cantidad = int(cantidad)
     cls()
 except ValueError:
@@ -73,7 +73,7 @@ def enviobucle():
         print("Formulario enviado")
         print(f"Usuario: {randomusario}")
         print(f"Contraseña: {randomcontra}")
-        print(f"Header (User-Agent: {random_useragent}")
+        print(f"User-Agent: {random_useragent}")
         print("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~")
     else:
         print("Hubo un error al enviar el paquete")
