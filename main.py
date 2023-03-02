@@ -7,34 +7,48 @@ from fake_useragent import UserAgent
 
 ua = UserAgent()
 
+def cls():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
 #Inicio
-os.system('cls' if os.name == 'nt' else 'clear')
-print("Contraataque phishing")
-time.sleep(1)
-print("by AguuZzz ")
-time.sleep(2)
-os.system('cls' if os.name == 'nt' else 'clear')
+cls()
+print("""
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠶⠦⡄⠀⠀⠀⠀⠀⠀⡴⠀⠀⠀
+⠀⢀⣀⠀⠀⠀⣀⠤⠖⠒⠋⡉⠙⢲⣺⢅⡀⠀⠹⡀⠀⠀⠀⢀⡜⠁⠀⠀⠀
+⣼⠉⠀⠉⠓⠏⠁⠀⠀⠀⠀⢯⣧⠈⢿⡆⠈⠓⢴⠇⠀⠀⣠⠊⠀⠀⠀⡀⠀
+⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠀⡀⠄⠠⢀⠈⢣⡀⠀⠁⠀⢀⡤⠊⠀⠀
+⠈⢧⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⢀⠎⠀⠀⠀⠘⡇⠀⢧⠀⠐⠊⠁⠀⠀⠀        AntiPhishing
+⠀⢸⠳⣄⠀⠀⠀⠀⠀⠀⠀⠈⢺⠀⠀⠀⠀⠀⡇⠀⢸⠀⠀⠀⠀⢀⣀⣀⡀       By: AguuZzz
+⠀⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣆⠠⠄⢀⡀⢇⠀⢸⡀⠀⡀⠀⠀⠀⠀⠀       Presione enter para continuar
+⠀⠘⡇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢃⠀⠀⠀⠈⠙⠆⡼⠛⢦⡀⠑⠢⣄⠀⠀
+⠀⠀⠹⡄⠀⠀⠀⠀⠀⠀⠀⠀⠀⡌⠢⣀⠀⢀⡴⡰⠁⠀⢀⡇⠀⠀⠈⠑⠀
+⠀⠀⠀⢸⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠗⠒⠚⠉⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡜⠀⠉⠢⢄⣀⠀⠀⠀⠀⠀⣀⡤⠖⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⡇⠀⠀⠀⠀⣨⠟⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠙⠂⠴⠒⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+""")
+input("")
+cls()
 
 
 #Link
 link = input("Inserte el link aqui: ")
-os.system('cls' if os.name == 'nt' else 'clear')
-
+cls()
 
 #Se inserta el "name=" del input
 print('El campo es el valor de "name=": <input type="text" name="NAME">')  
 campo = input("Inserte el nombre del campo usuario aqui: ")
-os.system('cls' if os.name == 'nt' else 'clear')
+cls()
 
 campo2 = input("Inserte el nombre del campo contraseña aqui: ")
-os.system('cls' if os.name == 'nt' else 'clear')
+cls()
 
 
 #Selecciona la cantidad de paquetes a enviar
 cantidad = input("Cuantos paquetes desearia enviar?: ")
-try:
+try: # Intenta transformrar la cantidad en un entero
     cantidad = int(cantidad)
-    os.system('cls' if os.name == 'nt' else 'clear')
+    cls()
 except ValueError:
     print("Seleccione un numero")
     time.sleep(1)
@@ -43,21 +57,17 @@ except ValueError:
 
 
 def enviobucle():
-    random_useragent = ua.random
+    random_useragent = ua.random 
     randomusario = ''.join(random.choice(string.ascii_letters) for i in range(8))
     randomcontra = ''.join(random.choice(string.ascii_letters) for i in range(8))
 
-
-   
     data = {
         campo: randomusario,
         campo2: randomcontra,
     }
 
     headers = {"user-agent": random_useragent}
-
     envio = requests.post(link, headers=headers, data=data)
-
 
     if envio.status_code == 200:
         print("Formulario enviado")
